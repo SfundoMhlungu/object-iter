@@ -11,8 +11,8 @@ npm i object-iter
 
 
 
-## Usage
-
+# Usage
+## sync iterator
 ### ES
 ```typescript
 
@@ -81,10 +81,80 @@ for(let val of iterator) {
 
 ```
 
-## upcoming features
+## async iterator
+### ES
+```typescript
 
-- async iterator
-- object peeking(looking at the next or prev value) without moving
+
+import {asyncObjectIterator} from "object-iter"
+
+
+ let Myobj = {
+     group: {icon: "torch.svg", name: "light"}, 
+     group1:  {icon: "landscape.svg", name: "land"}
+     
+     }
+
+
+let [iterator, keys]  = asyncObjectIterator(Myobj)
+
+     or 
+
+let iterator = asyncObjectIterator(Myobj)[0]
+let keys = asyncObjectIterator(Myobj)[1]
+
+
+/*Objectiter returns 
+
+ iterator - this is a [Symbol.iterator] meaning you can now loop over the object with NB:***for of loop***, 
+
+ keys - an array of strings(keys) in order of iteration
+  eg  ["group", "group1"]
+ 
+
+ */
+
+// looping 
+NB the ";" before the IIFE is important
+
+;(async function() {
+  for await (let val of iterator) {
+    console.log(val)
+}
+})()
+
+
+```
+### CommonJS
+
+```javascript
+const ObjectIter = require("object-iter")
+
+ let Myobj = {
+     group: {icon: "torch.svg", name: "light"}, 
+     group1:  {icon: "landscape.svg", name: "land"}
+     
+     }
+
+let [iterator, keys]  = ObjectIter.asyncObjectIterator(Myobj)
+
+
+  or 
+
+let iterator = ObjectIter.asyncObjectIterator(Myobj)[0]
+let keys = ObjectIter.asyncObjectIterator(Myobj)[1]
+
+
+
+;(async function() {
+  for await (let val of iterator) {
+    console.log(val)
+}
+})()
+
+
+```
+
 
 
 
