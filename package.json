@@ -10,7 +10,6 @@
     "types": "lib",
     "scripts": {
         "build": "tsc -p . && tsc -p tsconfig-cjs.json"
-
     },
     "keywords": [
         "Object iterator",
