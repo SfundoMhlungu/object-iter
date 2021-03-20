@@ -9,4 +9,5 @@ export default function ObjectIterator(object: any): (string[] | {
         };
     };
 })[];
+export declare function asyncObjectIterator(object: any): (string[] | AsyncGenerator<any, void, unknown>)[];
 //# sourceMappingURL=index.d.ts.map
