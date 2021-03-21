@@ -18,6 +18,7 @@
         "javascript object iterator",
         "esModule and commonjs"
     ],
-    "author": "Sfundo(sk) Mhlungu",
-    "license": "MIT"
+    "author": "Sfundo(sk) Mhlungu <mhlungusk@gmail.com> (https://sfundomhlungu.github.io/Portfolio/)",
+    "license": "MIT",
+    "homepage": "https://github.com/SfundoMhlungu/object-iterator#readme"
 }

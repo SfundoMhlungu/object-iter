@@ -115,7 +115,7 @@ let keys = asyncObjectIterator(Myobj)[1]
  */
 
 // looping 
-NB the ";" before the IIFE is important
+//NB the ";" before the IIFE is important
 
 ;(async function() {
   for await (let val of iterator) {
