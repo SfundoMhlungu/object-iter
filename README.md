@@ -172,7 +172,7 @@ let keys = ObjectIter.asyncObjectIterator(Myobj)[1]
 
 ## contributions 
 
-be open soon for them, 
+new features and contributions are welcomed, the code is on github, please use github issues for things like bugs and feature  request  
 
 
 
